@@ -11,7 +11,7 @@
 @implementation StripePaymentService
 
 -(void)processPaymentAmount:(NSInteger)amount {
-    
+    NSLog(@"Stripe is processing your payment of %ld", (long)amount);
 }
 
 @end

@@ -11,7 +11,7 @@
 @implementation AmazonPaymentService
 
 -(void)processPaymentAmount:(NSInteger)amount {
-    
+    NSLog(@"Amazon is processing your payment of %ld", (long)amount);
 }
 
 @end

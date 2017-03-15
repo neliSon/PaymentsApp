@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
         fgets(userInput, 255, stdin);
         
         int inputInt = [[NSString stringWithFormat:@"%s", userInput] intValue];
-        NSLog(@"You've selected %d.", inputInt);
+//        NSLog(@"You've selected %d.", inputInt);
         
         // instantiate payment gateway to process payment.
         PaymentGateway *paymentGateway = [[PaymentGateway alloc] init];
@@ -48,11 +48,13 @@ int main(int argc, const char * argv[]) {
                 paymentGateway.paymentDelegate = stripePaymentService;
                 [paymentGateway processPaymentAmount:dollarValue];
             }
+                break;
             case 3:
             {
                 AmazonPaymentService *amazonPaymentService = [[AmazonPaymentService alloc] init];
                 paymentGateway.paymentDelegate = amazonPaymentService;
                 [paymentGateway processPaymentAmount:dollarValue];
+                break;
             }
             default:
                 break;

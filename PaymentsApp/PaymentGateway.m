@@ -11,7 +11,7 @@
 @implementation PaymentGateway
 
 -(void)processPaymentAmount:(NSInteger)amount {
-    NSLog(@"Processing payment of %ld", (long)amount); // call delegate to do this instead 
+    [self.paymentDelegate processPaymentAmount:amount];
 }
 
 @end

@@ -11,7 +11,7 @@
 @implementation PaypalPaymentService
 
 -(void)processPaymentAmount:(NSInteger)amount {
-    
+    NSLog(@"Paypal is processing your payment of %ld", (long)amount);
 }
 
 @end

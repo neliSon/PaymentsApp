@@ -12,11 +12,11 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // when the app starts, create a dollar value between 100 - 1000.
-        float dollarValue = arc4random_uniform(900) + 100;
+        NSInteger dollarValue = arc4random_uniform(900) + 100;
         
         // print menu.
         NSLog(@"Thank you for shopping at ChowDynasty.com.");
-        NSLog(@"Your total today is $%0.2f.", dollarValue);
+        NSLog(@"Your total today is $%0.2ld.", (long)dollarValue);
         NSLog(@"Please select your payment method:");
         NSLog(@"1: Paypal, 2: Stripe, 3: Amazon");
         
@@ -29,8 +29,7 @@ int main(int argc, const char * argv[]) {
         
         // instantiate payment gateway to process payment.
         PaymentGateway *paymentGateway = [[PaymentGateway alloc] init];
-        NSInteger inputInteger = (NSInteger)inputInt;
-        [paymentGateway processPaymentAmount: inputInteger];
+        [paymentGateway processPaymentAmount: dollarValue];
         
         
     }

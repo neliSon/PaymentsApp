@@ -1,5 +1,5 @@
 //
-//  PaymentGateway.h
+//  PaymentDelegate.h
 //  PaymentsApp
 //
 //  Created by Nelson Chow on 2017-03-14.
@@ -7,11 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PaymentDelegate.h"
 
-@interface PaymentGateway : NSObject
-
-@property id<PaymentDelegate> delegate;
+@protocol PaymentDelegate <NSObject>
 
 -(void)processPaymentAmount:(NSInteger)amount;
 

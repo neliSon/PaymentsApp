@@ -7,11 +7,32 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PaymentGateway.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        // when the app starts, create a dollar value between 100 - 1000.
+        float dollarValue = arc4random_uniform(900) + 100;
+        
+        // print menu.
+        NSLog(@"Thank you for shopping at ChowDynasty.com.");
+        NSLog(@"Your total today is $%0.2f.", dollarValue);
+        NSLog(@"Please select your payment method:");
+        NSLog(@"1: Paypal, 2: Stripe, 3: Amazon");
+        
+        // get user input.
+        char userInput[255];
+        fgets(userInput, 255, stdin);
+        
+        int inputInt = [[NSString stringWithFormat:@"%s", userInput] intValue];
+        NSLog(@"You've selected %d.", inputInt);
+        
+        // instantiate payment gateway to process payment.
+        PaymentGateway *paymentGateway = [[PaymentGateway alloc] init];
+        NSInteger inputInteger = (NSInteger)inputInt;
+        [paymentGateway processPaymentAmount: inputInteger];
+        
+        
     }
     return 0;
 }

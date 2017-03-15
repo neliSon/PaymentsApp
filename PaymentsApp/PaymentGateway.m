@@ -10,4 +10,8 @@
 
 @implementation PaymentGateway
 
+-(void)processPaymentAmount:(NSInteger)amount {
+    NSLog(@"Processing payment of %ld", (long)amount);
+}
+
 @end

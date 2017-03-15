@@ -11,7 +11,7 @@
 
 @interface PaymentGateway : NSObject
 
-@property id<PaymentDelegate> delegate;
+@property (weak) id<PaymentDelegate> paymentDelegate;
 
 -(void)processPaymentAmount:(NSInteger)amount;
 

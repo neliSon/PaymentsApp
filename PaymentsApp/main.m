@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "PaymentGateway.h"
+#import "PaypalPaymentService.h"
+#import "StripePaymentService.h"
+#import "AmazonPaymentService.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -29,7 +32,32 @@ int main(int argc, const char * argv[]) {
         
         // instantiate payment gateway to process payment.
         PaymentGateway *paymentGateway = [[PaymentGateway alloc] init];
-        [paymentGateway processPaymentAmount: dollarValue];
+        
+        // instantiate a concrete payment class according to the menu item the user selects.
+        switch (inputInt) {
+            case 1:
+            {
+                PaypalPaymentService *paypalPaymentService = [[PaypalPaymentService alloc] init];
+                paymentGateway.paymentDelegate = paypalPaymentService;
+                [paymentGateway processPaymentAmount:dollarValue];
+            }
+                break;
+            case 2:
+            {
+                StripePaymentService *stripePaymentService = [[StripePaymentService alloc] init];
+                paymentGateway.paymentDelegate = stripePaymentService;
+                [paymentGateway processPaymentAmount:dollarValue];
+            }
+            case 3:
+            {
+                AmazonPaymentService *amazonPaymentService = [[AmazonPaymentService alloc] init];
+                paymentGateway.paymentDelegate = amazonPaymentService;
+                [paymentGateway processPaymentAmount:dollarValue];
+            }
+            default:
+                break;
+        }
+        
         
         
     }

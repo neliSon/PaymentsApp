@@ -11,7 +11,15 @@
 @implementation StripePaymentService
 
 -(void)processPaymentAmount:(NSInteger)amount {
-    NSLog(@"Stripe is processing your payment of %ld", (long)amount);
+    NSLog(@"Stripe processed your payment of $%ld.", (long)amount);
+}
+
+-(BOOL)canProcessPayment {
+    if (arc4random_uniform(2) == 1) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 @end

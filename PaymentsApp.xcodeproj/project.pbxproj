@@ -12,6 +12,7 @@
 		1BA005461E78FBB000711537 /* StripePaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA005451E78FBB000711537 /* StripePaymentService.m */; };
 		1BA005491E78FBC400711537 /* PaypalPaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA005481E78FBC400711537 /* PaypalPaymentService.m */; };
 		1BA0054C1E78FBCE00711537 /* AmazonPaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0054B1E78FBCE00711537 /* AmazonPaymentService.m */; };
+		1BA005531E7A527E00711537 /* ApplePaymentService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA005521E7A527E00711537 /* ApplePaymentService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,8 @@
 		1BA0054A1E78FBCE00711537 /* AmazonPaymentService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonPaymentService.h; sourceTree = "<group>"; };
 		1BA0054B1E78FBCE00711537 /* AmazonPaymentService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonPaymentService.m; sourceTree = "<group>"; };
 		1BA0054F1E78FC0300711537 /* PaymentDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentDelegate.h; sourceTree = "<group>"; };
+		1BA005511E7A527E00711537 /* ApplePaymentService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplePaymentService.h; sourceTree = "<group>"; };
+		1BA005521E7A527E00711537 /* ApplePaymentService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplePaymentService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 				1BA005451E78FBB000711537 /* StripePaymentService.m */,
 				1BA0054A1E78FBCE00711537 /* AmazonPaymentService.h */,
 				1BA0054B1E78FBCE00711537 /* AmazonPaymentService.m */,
+				1BA005511E7A527E00711537 /* ApplePaymentService.h */,
+				1BA005521E7A527E00711537 /* ApplePaymentService.m */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				1BA0053B1E78F4E500711537 /* main.m in Sources */,
 				1BA0054C1E78FBCE00711537 /* AmazonPaymentService.m in Sources */,
 				1BA005461E78FBB000711537 /* StripePaymentService.m in Sources */,
+				1BA005531E7A527E00711537 /* ApplePaymentService.m in Sources */,
 				1BA005431E78F81000711537 /* PaymentGateway.m in Sources */,
 				1BA005491E78FBC400711537 /* PaypalPaymentService.m in Sources */,
 			);

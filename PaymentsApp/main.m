@@ -11,17 +11,18 @@
 #import "PaypalPaymentService.h"
 #import "StripePaymentService.h"
 #import "AmazonPaymentService.h"
+#import "ApplePaymentService.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // when the app starts, create a dollar value between 100 - 1000.
-        NSInteger dollarValue = arc4random_uniform(900) + 100;
+        NSInteger dollarValue = arc4random_uniform(901) + 100;
         
         // print menu.
         NSLog(@"Thank you for shopping at ChowDynasty.com.");
         NSLog(@"Your total today is $%0.2ld.", (long)dollarValue);
         NSLog(@"Please select your payment method:");
-        NSLog(@"1: Paypal, 2: Stripe, 3: Amazon");
+        NSLog(@"1: Paypal, 2: Stripe, 3: Amazon, 4: Apple");
         
         // get user input.
         char userInput[255];
@@ -56,12 +57,16 @@ int main(int argc, const char * argv[]) {
                 [paymentGateway processPaymentAmount:dollarValue];
                 break;
             }
+            case 4:
+            {
+                ApplePaymentService *applePaymentService = [[ApplePaymentService alloc] init];
+                paymentGateway.paymentDelegate = applePaymentService;
+                [paymentGateway processPaymentAmount:dollarValue];
+                break;
+            }
             default:
                 break;
         }
-        
-        
-        
     }
     return 0;
 }
